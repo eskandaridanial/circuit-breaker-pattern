@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  client-service:
+    container_name: client
+    build:
+      context: circuit-breaker-client
+      dockerfile: /home/danial/Downloads/circuit-breaker-pattern/circuit-breaker-client/Dockerfile
+    ports:
+    - 8001:8001
+
+  server-service:
+    container_name: server
+    build:
+      context: circuit-breaker-server
+      dockerfile: /home/danial/Downloads/circuit-breaker-pattern/circuit-breaker-server/Dockerfile
+    ports:
+    - 8000:8000
